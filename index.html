@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botões Esquerda e Direita com Fundo</title>
+    
+    <style>
+        /* Organização do ecrã e Imagem de Fundo */
+        body {
+            display: flex;
+            justify-content: space-around; /* Distribui os botões, atirando um para cada lado */
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0 50px; 
+            
+            /* --- NOVA IMAGEM DE FUNDO --- */
+            background-image: url('a.jpg'); /* Atualizado para a nova imagem */
+            background-size: cover; /* Faz com que a imagem cubra todo o ecrã */
+            background-position: center; /* Centra a imagem */
+            background-repeat: no-repeat; /* Evita repetições */
+        }
+
+        /* Estilo base do botão */
+        .btn-imagem {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            transition: transform 0.2s ease, filter 0.2s ease;
+        }
+
+        /* Estilo da imagem dentro do botão */
+        .btn-imagem img {
+            width: 150px;
+            height: 150px;
+            border-radius: 20px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); 
+            object-fit: cover;
+        }
+
+        /* Efeito de Hover (Passar o rato por cima) */
+        .btn-imagem:hover {
+            transform: scale(1.1) translateY(-5px);
+            filter: brightness(1.2);
+        }
+
+        /* Efeito Active (Clicar) */
+        .btn-imagem:active {
+            transform: scale(0.95);
+            filter: brightness(0.9);
+        }
+    </style>
+</head>
+<body>
+
+    <button class="btn-imagem" onclick="acaoDoBotao('Esquerda')">
+        <img src="https://dummyimage.com/150x150/3498db/ffffff&text=Esquerda" alt="Botão Esquerda">
+    </button>
+
+    <button class="btn-imagem" onclick="acaoDoBotao('Direita')">
+        <img src="https://dummyimage.com/150x150/e74c3c/ffffff&text=Direita" alt="Botão Direita">
+    </button>
+
+    <script>
+        // Função que avisa se foi escolhida a esquerda ou a direita
+        function acaoDoBotao(direcao) {
+            alert("Escolheu ir para a " + direcao + "!");
+        }
+    </script>
+
+</body>
+</html>
